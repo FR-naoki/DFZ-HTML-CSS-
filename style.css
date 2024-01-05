@@ -14,7 +14,8 @@ h2 {
 }
 
 ul li, ol li {
-    padding: 1em 0;
+    padding: 1em;
+    list-style-position: inside;
 }
 
 ol.answers {
@@ -24,6 +25,8 @@ ol.answers {
 ol.answers li:hover {
     border: 0.1em solid #baeded;
     background-color: #d7e8fc;
+    padding: 0.9em;
+    cursor: pointer;
 }
 
 #main {
@@ -33,6 +36,11 @@ ol.answers li:hover {
 div.section {
     margin-top: 2em;
 }
+
+div#section-correct-answer {
+    display :none;
+}
+
 
 span#correct-answer {
     font-weight: bold;

@@ -1,10 +1,14 @@
 const answersList = document.querySelectorAll('ol.answers li');
 
-function checkClickedAnswer() {
+function checkClickedAnswer(event) {
+    const clickedAnswerElement = event.currentTarget;
+    console.log(clickedAnswerElement.dataset.answer);
 
+    const selectedAnswer = `A`;
+    const correctAnswer = `B`;
     let message;
     let answerColorCode;
-    if (false) {
+    if (selectedAnswer === correctAnswer) {
         message = `正解です！おめでとう`
         answerColorCode = ``            
     } else {

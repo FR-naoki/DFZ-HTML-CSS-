@@ -1,11 +1,17 @@
 const answersList = document.querySelectorAll('ol.answers li');
 
+const correctAnswers = {
+    question1: `B`,
+    question2: `A`,
+    question3: `B`,
+    question4: `C`
+}
+
 function checkClickedAnswer(event) {
     const clickedAnswerElement = event.currentTarget;
-    console.log(clickedAnswerElement.dataset.answer);
-
-    const selectedAnswer = `A`;
-    const correctAnswer = `B`;
+    const selectedAnswer = clickedAnswerElement.dataset.answer;
+    const questionId = clickedAnswerElement.closest(`ol.answers`).dataset.id;
+    const correctAnswer = correctAnswers[questionId];
     let message;
     let answerColorCode;
     if (selectedAnswer === correctAnswer) {

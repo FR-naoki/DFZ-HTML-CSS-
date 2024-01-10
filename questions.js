@@ -15,11 +15,11 @@ function checkClickedAnswer(event) {
     let message;
     let answerColorCode;
     if (selectedAnswer === correctAnswer) {
-        message = `正解です！おめでとう`
-        answerColorCode = ``            
+        message = `正解です！おめでとう`;
+        answerColorCode = ``;            
     } else {
-        message = `残念！不正解です！`
-        answerColorCode = `#f05959`            
+        message = `残念！不正解です！`;
+        answerColorCode = `#F05959`;
     }
     alert(message);
     document.querySelector('span#correct-answer').style.color = answerColorCode;

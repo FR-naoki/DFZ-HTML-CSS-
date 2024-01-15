@@ -1,10 +1,10 @@
 const answersList = document.querySelectorAll('ol.answers li');
 
 const correctAnswers = {
-    question1: `B`,
-    question2: `A`,
-    question3: `B`,
-    question4: `C`
+    1: `B`,
+    2: `A`,
+    3: `B`,
+    4: `C`
 }
 
 function checkClickedAnswer(event) {

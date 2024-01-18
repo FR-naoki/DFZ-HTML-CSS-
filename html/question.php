@@ -2,33 +2,28 @@
 
 require __DIR__.'/../lib/functions.php';
 
-$id = '3';
+$id = escape($_GET['id'] ?? '');
 
 $data = fetchById($id);
-// echo '<pre>';
-// var_dump($data);
 
-// $handler = fopen(__DIR__.'/../lib/data.csv', 'r');
-// $one = fgetcsv($handler);
-// $two = fgetcsv($handler);
-// $three = fgetcsv($handler);
+if (!$data) {
+    // HTTPレスポンスのヘッダを404にする
+    header('HTTP/1.1 404 Not Found');
 
-// var_dump($one);
-// var_dump($two);
-// var_dump($three);
+    // レスポンスの種類を指定する
+    header('Content-Type: text/html; charset=UTF-8');
+    
+    include __DIR__.'/../template/404.tpl.php';
+    exit(0);
+}
 
-$question = nl2br(htmlspecialchars($data[1]));
+$formattedData = generatedFormattedData($data);
 
-$answers = [
-    'A' => htmlspecialchars($data[2]),
-    'B' => htmlspecialchars($data[3]),
-    'C' => htmlspecialchars($data[4]),
-    'D' => htmlspecialchars($data[5]),
-];
-
-$correctAnswer = htmlspecialchars(strtoupper($data[6]));
+$question = $formattedData['question'];
+$answers = $formattedData['answers'];
+$correctAnswer = $formattedData['correctAnswer'];
 $correctAnswerValue = $answers[$correctAnswer];
-$explanation = nl2br(htmlspecialchars($data[7]));
+$explanation = $formattedData['explanation'];
 
 
 include __DIR__.'/../template/question.tpl.php';

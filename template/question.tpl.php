@@ -8,19 +8,20 @@
     <script src="questions.js" defer></script>
     <title>問題 <?php echo $id; ?> ｜ Quiz</title>
 </head>
+
 <body>
     <div id="main">
         <h1>Quiz</h1>
         <div class="section">
-            <h2>問題<?php echo $id;?></h2>
+            <h2>問題<?php echo $id; ?></h2>
             <p>
                 <?php echo $question; ?>
             </p>
             <h3>選択肢</h3>
-            <ol class="answers" data-id="<?php echo $id;?>">
-            <?php foreach ($answers as $key => $value) : ?>
-                <li data-answer= <?php echo $key; ?>><?php echo $value; ?></li>
-            <?php endforeach; ?>
+            <ol class="answers" data-id="<?php echo $id; ?>">
+                <?php foreach ($answers as $key => $value) : ?>
+                    <li data-answer=<?php echo $key; ?>><?php echo $value; ?></li>
+                <?php endforeach; ?>
             </ol>
         </div>
         <div id="section-correct-answer">
@@ -30,7 +31,14 @@
                 <?php echo $explanation; ?>
             </p>
         </div>
-        <div class="section"> 
+
+        <form method="POST" action="answer.php">
+            <p>ID: <br><input name="id" type="text" value="1"></p>
+            <p>選んだ答え: <br><input name="selectedAnswer" type="text" value="C"></p>
+            <p><input type="submit" value="送信"></p>
+        </form>
+
+        <div class="section">
             <a href="http://127.0.0.1:5500/index.html">戻る</a>
         </div>
     </div>

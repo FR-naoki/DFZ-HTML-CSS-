@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-require __DIR__.'/../lib/functions.php';
+require __DIR__ . '/../lib/functions.php';
 
 
 $id = $_POST['id'] ?? '';
@@ -13,9 +13,14 @@ if (!$data) {
     header('HTTP/1.1 404 Not Found');
 
     // レスポンスの種類を指定する
-    header('Content-Type: text/html; charset=UTF-8');
-    
-    include __DIR__.'/../template/404.tpl.php';
+    header('Content-Type: application/json; charset=UTF-8');
+
+
+    $response = [
+        'message' => 'The specified id could not be found',
+    ];
+
+    echo json_encode($response);
     exit(0);
 }
 
@@ -34,9 +39,13 @@ $explanation = $formattedData['explanation'];
 
 $result = $selectedAnswer === $correctAnswer;
 
-echo $result;
-var_dump($result);
-echo $correctAnswer;
-echo $correctAnswerValue;
-echo $explanation;
+$response = [
+    'result' => $result,
+    'correctAnswer' => $correctAnswer,
+    'correctAnswerValue' => $correctAnswerValue,
+    'explanation' => $explanation,
+];
 
+// レスポンスの種類を指定する
+header('Content-Type: application/json; charset=UTF-8');
+echo json_encode($response);

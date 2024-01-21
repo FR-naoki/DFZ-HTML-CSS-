@@ -1,5 +1,23 @@
 <?php 
 
+function loadTemplate($filename) {
+    include __DIR__.'/../template/'.$filename.'.tpl.php';
+}
+
+function error404() {
+    // HTTPレスポンスのヘッダを404にする
+    header('HTTP/1.1 404 Not Found');
+
+    // レスポンスの種類を指定する
+    header('Content-Type: text/html; charset=UTF-8');
+    
+    include __DIR__.'/../template/404.tpl.php';
+    exit(0);
+}
+
+
+
+
 function fetchById($id) {
     // ファイルを開く
     $handler = fopen(__DIR__.'/data.csv', 'r');
@@ -77,6 +95,6 @@ function generatedFormattedData($data) {
     $convertedData = htmlspecialchars($data, ENT_HTML5);
     if ($nl2br) {
         return nl2br($convertedData);
-    }
+    } 
     return $convertedData;
  }

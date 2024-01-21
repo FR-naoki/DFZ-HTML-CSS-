@@ -27,17 +27,10 @@
         <div id="section-correct-answer">
             <h2>答え</h2>
             <p>
-                <span id="correct-answer"><?php echo $correctAnswer; ?>. <?php echo $correctAnswerValue; ?></span><br>
-                <?php echo $explanation; ?>
+                <span id="correct-answer"></span><br>
+                <span id="explanation"></span>
             </p>
         </div>
-
-        <form method="POST" action="answer.php">
-            <p>ID: <br><input name="id" type="text" value="1"></p>
-            <p>選んだ答え: <br><input name="selectedAnswer" type="text" value="C"></p>
-            <p><input type="submit" value="送信"></p>
-        </form>
-
         <div class="section">
             <a href="http://127.0.0.1:5500/index.html">戻る</a>
         </div>

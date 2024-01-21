@@ -12,11 +12,11 @@ if (!$data) {
 
 $formattedData = generatedFormattedData($data);
 
-$question = $formattedData['question'];
-$answers = $formattedData['answers'];
-$correctAnswer = $formattedData['correctAnswer'];
-$correctAnswerValue = $answers[$correctAnswer];
-$explanation = $formattedData['explanation'];
 
+$assignData = [
+    'id' => $formattedData['id'],
+    'question' => $formattedData['question'],
+    'answers' => $formattedData['answers'],
+];
 
-loadTemplate();
+loadTemplate('question', $assignData);

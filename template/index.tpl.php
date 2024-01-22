@@ -10,10 +10,9 @@
     <h1>Quiz</h1>
     <h2>問題一覧</h2>
     <ul>
-        <li><a href="http://127.0.0.1:5500/qustion1.html">問題1</a></li>
-        <li><a href="http://127.0.0.1:5500/qustion2.html">問題2</a></li>
-        <li><a href="http://127.0.0.1:5500/qustion3.html">問題3</a></li>
-        <li><a href="http://127.0.0.1:5500/qustion4.html">問題4</a></li>
+        <?php foreach ($questions as $question):?>
+            <li><a href="question.php?id=<?php echo $question['id']; ?>"><?php echo $question['question']; ?></a></li>
+        <?php endforeach; ?>
     </ul>
 </body>
 </html>

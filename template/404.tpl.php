@@ -14,7 +14,7 @@
         <h1>Quiz</h1>
         問題は見つかりませんでした。
     <div class="section">
-        <a href="http://127.0.0.1:5500/index.html">戻る</a>
+        <a href="index.php">戻る</a>
     </div>
     </div>
 </body>

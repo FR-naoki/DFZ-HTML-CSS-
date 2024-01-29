@@ -9,3 +9,14 @@
     <title>問題 ｜ Quiz</title>
 </head>
 
+<body>
+    <div id="main">
+        <h1>Quiz</h1>
+        問題は見つかりませんでした。
+    <div class="section">
+        <a href="index.php">戻る</a>
+    </div>
+    </div>
+</body>
+
+</html>

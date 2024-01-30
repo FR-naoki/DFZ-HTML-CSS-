@@ -16,7 +16,5 @@
     <div class="section">
         <a href="index.php">戻る</a>
     </div>
-    </div>
-</body>
 
 </html>

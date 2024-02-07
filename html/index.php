@@ -9,3 +9,14 @@ if (!$dataList) {
 }
 
 
+$questions = [];
+foreach ($dataList as $data) {
+    $questions[] = generatedFormattedData($data);
+}
+
+
+$assignData = [
+    'questions' => $questions,
+];
+
+loadTemplate('index', $assignData);
